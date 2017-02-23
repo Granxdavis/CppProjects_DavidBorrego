@@ -81,7 +81,12 @@ int main() {
 
 	do
 	{
+		for (int i = 0; i >= 9; i++) {
 		
+			if (zombies[i].isAlive) {
+				
+			}
+		}
 
 
 	} while (Pepe.isAlive && Melquiades.isAlive);
