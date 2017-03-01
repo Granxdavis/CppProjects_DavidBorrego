@@ -1,89 +1,79 @@
-#include "stdafx.h"#include <iostream>
-#include <string>
-#include <ctime>
-enum class EnemyType // Strongly-typed enum for enemy types
-{
-	ZOMBIE,
-	VAMPIRE,
-	GHOST,
-	WEREWOLF,
-	MAX
-};
+#include "stdafx.h"
 
-struct Enemy // Enemy structure to hold its properties
-{
+enum class EnemyType { zombie, vampire, ghost, witch, MAX };
+
+struct Enemy {
+
 	EnemyType type;
 	std::string name;
 	int health;
-	std::string getEnemyTypeString() // Special function to convert an enemy type into a string
-	{
-		switch (type) {
-		case EnemyType::ZOMBIE: return "zombie";
-		case EnemyType::VAMPIRE: return "vampire";
-		case EnemyType::GHOST: return "ghost";
-		case EnemyType::WEREWOLF: return "werewolf";
-		default: return "";
+
+	std::string getEnemyTypeString() {
+		switch (type)
+		{
+		case EnemyType::zombie:
+			return  "zombie";
+			break;
+		case EnemyType::vampire:
+			return  "vampire";
+			break;
+		case EnemyType::ghost:
+			return  "ghost";
+			break;
+		case EnemyType::witch:
+			return  "witch";
+			break;
 		}
 	}
+
 };
 
-
-bool operator==(const Enemy &a, const Enemy &b) // Operator == overloaded to compare to enemy objects
-{
-	return a.name == b.name && a.type == b.type;
+bool operator== (const Enemy &a, const Enemy &b) {
+	return (a.name == b.name && a.type == b.type);
 }
 
+static Enemy createRandomEnemy() {
 
-static Enemy CreateRandomEnemy() // Function that returns a new randomly created enemy
-{
-	static const int MAX_LIFE{ 500 }; // Maximum life an enemy can have statically created
-	static const std::string NAMES[]{ // List of possible enemy names statically created
-		"Gertrudiz",
-		"Pancracia",
-		"Anacleto",
-		"Hipolito",
-		"Eustaquio",
-		"Fulgencia"
-	};
+	static const int MIN_LIFE{ 100 };
+	static const int MAX_LIFE{ 300 };
 
+	static const std::string NAMES[] = { "Goku","Vegeta","Krillin","Cor Petit","Gohan","Trunks","Goten","Tenshinhan","Chaos" };
 
-	return Enemy{ // Returns an enemy with random attributes
+	return Enemy{
 		static_cast<EnemyType>(rand() % static_cast<int>(EnemyType::MAX)),
 		NAMES[rand() % (sizeof NAMES / sizeof std::string)],
-		rand() % MAX_LIFE
+		MIN_LIFE + rand() % (MAX_LIFE - MIN_LIFE + 1)
 	};
 }
-
 
 int main()
 {
 	srand(static_cast<unsigned>(time(nullptr)));
-	const int MAX_ENEMIES{ 5 }; // Maximum number of enemies the array can hold
-	Enemy enemies[MAX_ENEMIES]; // Fixed empty array of enemies
-	{ // Initialization of each enemy in the array
+	const int MAX_ENEMIES{ 5 };
+	Enemy enemies[MAX_ENEMIES];
+
+	{
 		int i{ 0 };
-		while (i < MAX_ENEMIES)
-		{
-			enemies[i] = CreateRandomEnemy();
+		while (i < MAX_ENEMIES) {
+			enemies[i] = createRandomEnemy();
 			int j{ i - 1 };
 			while (j >= 0) {
-				if (enemies[i] == enemies[j])
-				{
+				if (enemies[i] == enemies[j]) {
 					--i;
 					break;
 				};
 				j--;
-			};
+			}
 			++i;
 		}
 	}
-	// Print the array of enemies
+
 	std::cout << "List of enemies:\n";
-	for (auto &enemy : enemies)
-	{
+	for (auto &enemy : enemies) {
 		std::cout << enemy.name <<
 			" is a " << enemy.getEnemyTypeString() <<
 			" whose life is " << enemy.health << std::endl;
 	}
+
 	return 0;
 }

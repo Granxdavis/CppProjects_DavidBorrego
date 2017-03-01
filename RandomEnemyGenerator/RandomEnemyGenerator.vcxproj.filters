@@ -18,6 +18,9 @@
     <ClCompile Include="RandomEnemyGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\HelloGitHub\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\HelloGitHub\stdafx.h">
