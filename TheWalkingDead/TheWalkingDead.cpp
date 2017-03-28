@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -17,6 +18,18 @@ enum class Weapon
 	MAX
 };
 
+std::ostream& operator<< (std::ostream &os, const Weapon &weapon) {
+	switch (weapon) {
+	case Weapon::GUN: return os << "gun";
+	case Weapon::SHOTGUN: return os << "shotgun";
+	case Weapon::REVOLVER: return os << "revolver";
+	case Weapon::SNIPER: return os << "sniper";
+	case Weapon::MACHINE_GUN: return os << "machine gun";
+	default: return os << "fists";
+	}
+}
+
+
 class Zombie;
 
 class Player {
@@ -24,9 +37,6 @@ public:
 				Weapon weapon;  
 				float precision; 
 				int life; 
-
-				
-
 
 				Player() :
 					weapon(static_cast <Weapon>(rand() % static_cast<int>(Weapon::MAX))), 
@@ -39,7 +49,7 @@ public:
 					life(t_life) {};
 
 
-				void attack(Zombie &Melquiades) const;
+				void attack(Zombie &zombie) const;
 				bool isAlive() const;
 };
 
@@ -48,7 +58,7 @@ class Zombie { public:
 				int distanceToPlayer; 
 				float speed; 
 				float Damage; 
-				int life = 100; 
+				int life; 
 
 				Zombie() :
 					distanceToPlayer(rand() % 180 + 20),
@@ -63,23 +73,15 @@ class Zombie { public:
 					Damage(t_Damage),
 					life(t_life){};
 
-				void attack(Player &Pepe) const;
+				void attack(Player &Player);
 				bool isAlive() const;
-
-				
-
 };
-
-Player Pepe;
-
-Zombie Melquiades;
-
 
 
 //Funcion de ataaque del zombie
-void Player::attack(Zombie & Melquiades) const
+void Player::attack(Zombie &zombie) const
 {
-	Melquiades.life -= static_cast<int>(static_cast<int>(weapon)*precision);
+	zombie.life -= static_cast<int>(static_cast<int>(weapon)*precision);
 }
 
 
@@ -88,18 +90,16 @@ bool Player::isAlive() const {
 }
 
 //funcion de ataque del zombie
-void Zombie::attack(Player& Pepe) const {
+void Zombie::attack(Player &player) {
 
 	if (distanceToPlayer <= 0) {
-		Pepe.life -= static_cast<int>(Damage);
+		player.life -= static_cast<int>(Damage);
 	}
 	else {
-		Melquiades.distanceToPlayer --;
+		distanceToPlayer --;
 	}
 
 }
-
-
 
 bool Zombie::isAlive() const {
 	return life > 0;
@@ -117,7 +117,7 @@ int main() {
 
 	std::cout << "Player\n\tinitial life: " << player.life <<
 		", weapon: " << player.weapon <<
-		", precision: " << player.precision << std::end;
+		", precision: " << player.precision << std::endl;
 
 	std::cout << "ZOMBIES ARE COMING!" << std::endl;
 
@@ -140,15 +140,19 @@ int main() {
 
 			if (zombies[i].isAlive()) {
 				player.attack(zombies[i]);
-				zombies[i].attack(player);
+				zombies[i].attack(player);				ZombiesAreAlive = true;
 			}
-		
-		
-			
 		}
+		std::cout << "-----------------------------------" << std::endl;
+		system("pause");
+		system("cls");
+	} while (player.isAlive() && ZombiesAreAlive);
 
+	if (ZombiesAreAlive)
+		std::cout << "GAME OVER: Zombies ate the player's brain!" << std::endl;
+	else
+		std::cout << "GAME OVER: Player killed all the zombies!" << std::endl;
 
-	} while (Pepe.isAlive && Melquiades.isAlive);
-
-	
+	system("pause");
+	return 0;
 }
