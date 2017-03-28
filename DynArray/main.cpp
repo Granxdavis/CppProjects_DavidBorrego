@@ -1,4 +1,4 @@
-#include "DynArray.hh"
+#include "DynArray.h"
 
 void main(void)
 {

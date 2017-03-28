@@ -1,4 +1,4 @@
-#include "DynArray.hh"
+#include "DynArray.h"
 
 
 // Constructores
@@ -58,12 +58,12 @@ void DynArray::push(const int &val)
 	{
 		int *tmp = new int[m_capacity += m_size / 2]; // Reserva un nuevo espacio con la capacidad que tenia +1
 
-		// Copiar los elementos que ya tenia
+													  // Copiar los elementos que ya tenia
 		for (int i{ 0 }; i < m_size; i++)
 		{
 			tmp[i] = m_data[i];
 		}
-		
+
 		//Borrar el contenido del puntero array
 		delete[] m_data;
 		// Poner m_data a donde apunta tmp
