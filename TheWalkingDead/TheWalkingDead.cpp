@@ -94,7 +94,7 @@ void Zombie::attack(Player& Pepe) const {
 		Pepe.life -= static_cast<int>(Damage);
 	}
 	else {
-		distanceToPlayer --;
+		Melquiades.distanceToPlayer --;
 	}
 
 }
