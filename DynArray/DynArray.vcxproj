@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E7154223-6B24-4592-976C-419981899C0C}</ProjectGuid>
+    <ProjectGuid>{896C774B-B968-4F04-AA66-4BAFCED81EC6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DynArray</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -146,11 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DynArray.cc" />
-    <ClCompile Include="main.cc" />
+    <ClInclude Include="DynArray.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Downloads\DynArray.hh" />
+    <ClCompile Include="DynArray.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
