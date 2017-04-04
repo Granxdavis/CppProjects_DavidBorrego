@@ -1,4 +1,5 @@
 #include "DynArray.hh"
+#include "..\..\..\..\..\Downloads\DynArray.hh"
 
 DynArray::DynArray(void) {
 	m_capacity = DYN_ARRAY_DEFAULT_SIZE;
@@ -32,3 +33,35 @@ DynArray& DynArray::operator=(const DynArray &x)
 		z.m_data[i] = x.m_data[i];
 	}
 }
+
+int * DynArray::begin(void) const
+{
+	return m_data;
+}
+
+int * DynArray::end(void) const
+{
+	return m_data + m_size;
+}
+
+
+void DynArray::copy(int * first, int * last, int * dest)
+{
+
+	for (int i = 0; i < last; i++) {
+	
+	}
+}
+
+void DynArray::push(const int & val)
+{
+	if (m_size <= m_capacity) {
+	
+	
+	}else{
+		m_data[m_size + 1] = val;
+	}
+	
+}
+
+
