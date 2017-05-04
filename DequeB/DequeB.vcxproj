@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8CC34086-A749-40E8-9799-F53EBFEE9CA6}</ProjectGuid>
+    <ProjectGuid>{F8E399E2-97CC-40F7-814E-AC4EAF24560C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Prueba</RootNamespace>
+    <RootNamespace>DequeB</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,13 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Files.cpp" />
-    <ClCompile Include="Vector.cpp" />
-    <ClCompile Include="VectorPractica.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
+    <ClCompile Include="Deque.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

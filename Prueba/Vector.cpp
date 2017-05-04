@@ -5,7 +5,7 @@
 #include "stdafx.h"
 using namespace std;
 
-
+/*
 
 int main() {
 	//Constructor sin argumentos y de tamaño 0
@@ -27,7 +27,7 @@ int main() {
 	std::vector<int>v7(v12.begin(), v12.end());//Begin apunta al primer elemento y el End apunta a una direccion mas de la ultima o ultima+1
 
 											   //Constructor de iteradores con rango
-	std::vector<int>v7(v12.begin() + 1, v12.end() - 1);//Copia todo menos el primero y el ultimo
+//	std::vector<int>v7(v12.begin() + 1, v12.end() - 1);//Copia todo menos el primero y el ultimo
 
 													   //Constructor de iteradores desde arrays. 
 	int myarray[]{ 16,2,77,29 };
@@ -56,4 +56,4 @@ int main() {
 
 	std::cout << vector1.size();
 	std::cout << vector1.capacity();
-}
+}*/
