@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PlayerRanking", "PlayerRank
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DequeB", "DequeB\DequeB.vcxproj", "{F8E399E2-97CC-40F7-814E-AC4EAF24560C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack", "Stack\Stack.vcxproj", "{356F580C-8878-441B-9EE3-DA85E1BF209E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{F8E399E2-97CC-40F7-814E-AC4EAF24560C}.Release|x64.Build.0 = Release|x64
 		{F8E399E2-97CC-40F7-814E-AC4EAF24560C}.Release|x86.ActiveCfg = Release|Win32
 		{F8E399E2-97CC-40F7-814E-AC4EAF24560C}.Release|x86.Build.0 = Release|Win32
+		{356F580C-8878-441B-9EE3-DA85E1BF209E}.Debug|x64.ActiveCfg = Debug|x64
+		{356F580C-8878-441B-9EE3-DA85E1BF209E}.Debug|x64.Build.0 = Debug|x64
+		{356F580C-8878-441B-9EE3-DA85E1BF209E}.Debug|x86.ActiveCfg = Debug|Win32
+		{356F580C-8878-441B-9EE3-DA85E1BF209E}.Debug|x86.Build.0 = Debug|Win32
+		{356F580C-8878-441B-9EE3-DA85E1BF209E}.Release|x64.ActiveCfg = Release|x64
+		{356F580C-8878-441B-9EE3-DA85E1BF209E}.Release|x64.Build.0 = Release|x64
+		{356F580C-8878-441B-9EE3-DA85E1BF209E}.Release|x86.ActiveCfg = Release|Win32
+		{356F580C-8878-441B-9EE3-DA85E1BF209E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
