@@ -96,7 +96,14 @@ void RemoveDuplicates(std::list<int> &ST5) {
 //====================================================================//
 
 void RemoveElement(std::list<int> &ST6, int Numero ){
-	for (auto it = ST6.begin(); it != ST6.end(); ++it) {		if (*it == Numero) {			ST6.erase(it);		}		}}
+
+	for (auto it = ST6.begin(); it != ST6.end(); ++it) {
+		if (*it == Numero) {
+			ST6.erase(it);
+		}
+	
+	}
+}
 
 //====================================================================//
 
